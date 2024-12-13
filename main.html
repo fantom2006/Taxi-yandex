@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нажатие на текст</title>
+    <script>
+        function toggleText() {
+            const resultElement = document.getElementById('result');
+            // Проверяем, есть ли текст, и если есть, скрываем его
+            if (resultElement.textContent) {
+                resultElement.textContent = '';
+            } else {
+                const fullText = "Это полный текст, который будет показываться частично.";
+                const part = fullText.slice(0,999); // Показываем первые 10 символов
+                resultElement.textContent = part;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="clickText" onclick="toggleText()">Нажми на меня, чтобы увидеть часть текста</p>
+    <p id="result"></p>
+</body>
+</html>
